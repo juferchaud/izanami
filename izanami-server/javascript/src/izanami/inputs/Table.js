@@ -963,7 +963,7 @@ export class Table extends Component {
                 title="Delete current item"
                 onClick={e => this.setState({ confirmDelete: true })}
               >
-                <i className="glyphicon glyphicon-trash" /> Delete
+                <i className="fas fa-trash-alt" /> Delete
               </button>}
               <button
                 type="button"
@@ -986,6 +986,7 @@ export class Table extends Component {
                 open={this.state.confirmDelete}
                 onDismiss={__ => this.setState({ confirmDelete: false })}
                 labelValid="Delete"
+                iconValid="fas fa-trash-alt"
               >
                 <div>Are you sure you want to delete that item ?</div>
               </SweetModal>
@@ -1001,6 +1002,7 @@ export class Table extends Component {
             this.setState({ confirmDeleteTable: false, toDelete: null })
           }
           labelValid="Delete"
+          iconValid="fas fa-trash-alt"
         >
           <div>Are you sure you want to delete that item ?</div>
         </SweetModal>

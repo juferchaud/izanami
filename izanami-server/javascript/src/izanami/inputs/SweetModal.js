@@ -159,6 +159,9 @@ export class SweetModal extends Component {
                   className="btn btn-success"
                   onClick={this.confirm}
                 >
+                  {this.props.iconValid && (
+                    <i className={`mr-2 `+this.props.iconValid} ></i>                  
+                  )}
                   {this.props.labelValid || "Confirm"}
                 </button>
               </div>
