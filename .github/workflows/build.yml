@@ -34,7 +34,7 @@ jobs:
       - uses: ./.github/workflows/java-opts
       - run: |
           ./scripts/build-javascript.sh
-          sbt  -Dsbt.color=always -Dsbt.supershell=false ";izanami-server/assembly
+          sbt  -Dsbt.color=always -Dsbt.supershell=false ";izanami-server/assembly"
           ls -la ./izanami-server/target
           ls -la ./izanami-server/target/scala-2.13
       - uses: ./.github/workflows/clean-cache
