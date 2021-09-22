@@ -12,10 +12,6 @@ export default class MyTvShows extends React.Component {
     Service.removeTvShow(id);
   };
 
-  markAsWon = () => {
-    Service.notifyWon("mytvshows:gotoepisodes:button");
-  };
-
   render() {
     return (
       <Layout user={this.props.user} rootPath={this.props.rootPath}>
@@ -35,17 +31,8 @@ export default class MyTvShows extends React.Component {
                     </div>
                     <div className="media-body">
                       <h3 className="media-heading">{title}</h3>
-                      <Experiment path={"mytvshows:gotoepisodes:button"}
-                                  notifyDisplay="/api/izanami/experiments/displayed">
-                        <Variant id={"A"}>
-                          <Link to={`/tvshow/${id}`} onClick={this.markAsWon} className="btn pull-right"
-                                alt="consulter"><i className="fas fa-eye"></i></Link>
-                        </Variant>
-                        <Variant id={"B"}>
-                          <Link to={`/tvshow/${id}`} onClick={this.markAsWon} className="btn pull-right"
-                                alt="consulter"><i className="glyphicon glyphicon-chevron-right"></i></Link>
-                        </Variant>
-                      </Experiment>
+                      <Link to={`/tvshow/${id}`} className="btn pull-right"
+                            alt="consulter"><i className="fas fa-eye"></i></Link>
                       <button type="button" className="btn pull-right" onClick={this.remove(id)} alt="supprimer"><i
                         className="glyphicon glyphicon-trash"/></button>
                       <p className="description">{_.truncate(description, {length: 350})}</p>
