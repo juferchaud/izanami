@@ -85,38 +85,16 @@ export default class TvShow extends React.Component {
                 <div className="panel panel-default" key={`season-${s.number}`}>
                   <div className="panel-heading" role="tab" id={`heading-${s.number}`}>
                     <h4 className="panel-title">
-
                         <a
                           role="button"
                           data-toggle="collapse"
                           data-parent="#accordion"
                           href={`#collapse-${s.number}`}
                           aria-controls={`collapse-${s.number}`}
-                          { ...(idx === expandId ? {'aria-expanded':"true"} :  {'aria-expanded':"false"} ) }
-                        >
+                          { ...(idx === expandId ? {'aria-expanded':"true"} :  {'aria-expanded':"false"} ) }>
                             {`Season ${s.number}`}
                         </a>
-                        <Feature path={"mytvshows:season:markaswatched"}>
-                          <Enabled>
-                            {s.allWatched &&
-                              <button
-                                onClick={this.markSeasonWatched(s.number, false)}
-                                className="btn btn default pull-right addBtn">
-                                  <i className="glyphicon glyphicon-ok"/>
-                              </button>
-                            }
-                            {!s.allWatched &&
-                              <button
-                                onClick={this.markSeasonWatched(s.number, true)}
-                                className="btn btn default pull-right addBtn">
-                                ADD
-                              </button>
-                            }
-                          </Enabled>
-                          <Disabled>
-                            <div></div>
-                          </Disabled>
-                        </Feature>
+                    {/*  add feature */}
                     </h4>
                   </div>
                   <div id={`collapse-${s.number}`} className={idx === expandId ? "panel-collapse collapse in": "panel-collapse collapse"} role="tabpanel" aria-labelledby={`heading-${s.number}`}>

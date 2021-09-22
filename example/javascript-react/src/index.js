@@ -99,19 +99,13 @@ class MainApp extends React.PureComponent {
 
 class IzanamiApp extends React.PureComponent {
   render() {
-    return (<IzanamiProvider id="mytvshows" fetchFrom={() =>
-      fetch("/api/izanami", {
-        method: 'GET',
-        credentials: 'include'
-      })
-    }>
+    return (
       <Router basename="/">
         <Switch>
           <Route path="/login" component={Login} rootPath={this.props.rootPath}/>
           <PrivateRoute path="/" component={MainApp} rootPath={this.props.rootPath}/>
         </Switch>
-      </Router>
-    </IzanamiProvider>)
+      </Router>)
   }
 }
 
