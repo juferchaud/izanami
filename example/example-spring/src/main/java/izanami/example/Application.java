@@ -8,7 +8,6 @@ import io.vavr.jackson.datatype.VavrModule;
 import izanami.ClientConfig;
 import izanami.Experiments;
 import izanami.Strategies;
-import izanami.example.otoroshi.OtoroshiFilter;
 import izanami.javadsl.*;
 import scala.concurrent.duration.FiniteDuration;
 
@@ -50,21 +49,5 @@ public class Application {
     @Bean
     Module vavrModule() {
         return new VavrModule();
-    }
-
-    @Configuration
-    @Profile("otoroshi")
-    static class Otoroshi {
-
-        @Bean
-        Filter otoroshiFilter(Environment environment) {
-            String sharedKey = environment.getProperty("otoroshi.sharedKey");
-            String issuer = environment.getProperty("otoroshi.issuer");
-            String claimHeaderName = environment.getProperty("otoroshi.claimHeaderName");
-            String requestIdHeaderName = environment.getProperty("otoroshi.requestIdHeaderName");
-            String stateHeaderName = environment.getProperty("otoroshi.stateHeaderName");
-            String stateRespHeaderName = environment.getProperty("otoroshi.stateRespHeaderName");
-            return new OtoroshiFilter("prod", sharedKey, issuer, requestIdHeaderName, claimHeaderName, stateHeaderName, stateRespHeaderName);
-        }
     }
 }

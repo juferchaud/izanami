@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import io.vavr.collection.List;
 import io.vavr.control.Option;
-import izanami.example.otoroshi.OtoroshiFilter;
 import izanami.example.shows.Shows;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
