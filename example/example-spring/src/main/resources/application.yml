@@ -36,25 +36,6 @@ izanami:
         { "id": "mytvshows:providers:tvdb", "enabled": true },
         { "id": "mytvshows:providers:betaserie", "enabled": false }
       ]
-  experiment:
-    fallback: >
-      [
-        {
-          "id": "mytvshows:gotoepisodes:button",
-          "name": "Test button",
-          "description": "Test button",
-          "enabled": true,
-          "variant": {
-            "id": "A",
-            "name": "Variant A",
-            "description": "Variant A"
-          }
-        }
-      ]
-    strategy:
-      type: FetchStrategy
   proxy:
     feature:
-      patterns: mytvshows:*
-    experiment:
       patterns: mytvshows:*
