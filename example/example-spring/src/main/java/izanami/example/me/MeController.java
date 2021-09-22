@@ -15,7 +15,6 @@ public class MeController {
     private final MeService meService;
     private final FeatureClient featureClient;
 
-    @Autowired
     public MeController(MeService meService, FeatureClient featureClient) {
         this.meService = meService;
         this.featureClient = featureClient;

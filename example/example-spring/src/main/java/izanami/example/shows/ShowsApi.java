@@ -29,7 +29,6 @@ public class ShowsApi implements Shows {
 
     private final BetaSerieApi betaSerieApi;
 
-@Autowired
 public ShowsApi(FeatureClient featureClient, TvdbShowsApi tvdbShowsApi, BetaSerieApi betaSerieApi) {
     this.featureClient = featureClient;
     this.tvdbShowsApi = tvdbShowsApi;
