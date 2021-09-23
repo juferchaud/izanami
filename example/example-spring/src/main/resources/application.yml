@@ -32,9 +32,7 @@ izanami:
       patterns: [mytvshows:*]
     fallback: >
       [
-        { "id": "mytvshows:season:markaswatched", "enabled": false },
-        { "id": "mytvshows:providers:tvdb", "enabled": true },
-        { "id": "mytvshows:providers:betaserie", "enabled": false }
+        { "id": "mytvshows:season:markaswatched", "enabled": false }
       ]
   proxy:
     feature:
