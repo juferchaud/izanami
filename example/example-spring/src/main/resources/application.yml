@@ -25,15 +25,3 @@ izanami:
   client-id: xxxx
   client-secret: xxxx
   backend: SseBackend
-  feature:
-    strategy:
-      type: CacheWithSseStrategy
-      polling-interval: 1 seconds
-      patterns: [mytvshows:*]
-    fallback: >
-      [
-        { "id": "mytvshows:season:markaswatched", "enabled": false }
-      ]
-  proxy:
-    feature:
-      patterns: mytvshows:*
