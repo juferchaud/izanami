@@ -13,11 +13,9 @@ import java.util.function.Supplier;
 public class MeController {
 
     private final MeService meService;
-    private final FeatureClient featureClient;
 
-    public MeController(MeService meService, FeatureClient featureClient) {
+    public MeController(MeService meService) {
         this.meService = meService;
-        this.featureClient = featureClient;
     }
 
     @GetMapping(path = "")
@@ -61,12 +59,7 @@ public class MeController {
             @PathVariable("seasonNumber") Long seasonNumber,
             @RequestParam("watched") Boolean watched
     ) {
-        return checkSecurityResponse(userId, () ->
-                featureClient.featureOrElse("mytvshows:season:markaswatched",
-                        () -> ResponseEntity.ok(meService.markSeason(userId, serieId, seasonNumber, watched)),
-                        () -> ResponseEntity.badRequest().<Me>body(null)
-                ).get()
-        );
+        return checkSecurityResponse(userId, () -> ResponseEntity.badRequest().<Me>body(null));
     }
 
     private <T> ResponseEntity<T> checkSecurity(String userId, Supplier<T> func) {
