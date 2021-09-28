@@ -23,7 +23,7 @@ class ABTestingSimulation extends Simulation {
     "Izanami-Client-Secret" -> "xxxx"
   )
 
-  private val experimentId = "mytvshows:gotoepisodes:button"
+  private val experimentId = "mytvshows:gotoepisodes:button-simulation"
 
   private val host = "http://localhost:9000"
 
